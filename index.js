@@ -25,4 +25,24 @@ function ReverseString(Strng){
     }
     console.log(Word.join(""));
 }
-ReverseString("Kapil");
+// ReverseString("Kapil");
+
+function isPalendrome(value){
+    const arrayOfWord = value.split("") ;
+    let forward = value;
+    let backword = "";
+
+    for(let i = arrayOfWord.length -1; i >= 0; i--){
+        backword += arrayOfWord[i];
+    }
+    if(forward == backword){
+        console.log (true);
+        console.log(forward + " | " + backword);
+    }
+    else{
+        console.log (false);
+        console.log(forward + " | " + backword);
+    }
+}
+// it can be even solved by two pointers as well.
+isPalendrome("Kapil");
