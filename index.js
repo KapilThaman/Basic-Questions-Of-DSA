@@ -45,4 +45,21 @@ function isPalendrome(value){
     }
 }
 // it can be even solved by two pointers as well.
-isPalendrome("Kapil");
+// isPalendrome("Kapil");
+
+function ReverseStringRecurssion(n){
+    let arr = n.split("");
+    let i = arr.length - 1 ;
+    let reversed = "";
+    if(i == 0){
+        return reversed += arr[i];
+    }
+    
+    reversed += arr[i] ;
+    i--;
+    return ReverseStringRecurssion(i);
+
+}
+
+// console.log(ReverseStringRecurssion("Kapil"));
+
