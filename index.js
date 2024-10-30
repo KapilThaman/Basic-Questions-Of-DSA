@@ -63,3 +63,12 @@ function ReverseStringRecurssion(n){
 
 // console.log(ReverseStringRecurssion("Kapil"));
 
+function wordfrequencyCounter(string1){
+    const stringArray = string1.split(" ");
+    let frequencyCounter = {};
+    for(let i = 0; i < stringArray.length; i++ ){
+        frequencyCounter[stringArray[i]] = frequencyCounter[stringArray[i]] + 1 || 1;
+     }
+     console.log(frequencyCounter);
+}
+wordfrequencyCounter("This is a Test")
