@@ -71,4 +71,27 @@ function wordfrequencyCounter(string1){
      }
      console.log(frequencyCounter);
 }
-wordfrequencyCounter("This is a Test")
+// wordfrequencyCounter("This is a Test");
+
+function anagramGrouping(arrayOfanagrams){
+        let trackingAnagrams = new Map(); 
+        
+        for(let i=0; i < arrayOfanagrams.length; i++){
+            let sort = arrayOfanagrams[i].split("").sort().join("");
+            
+            if(!trackingAnagrams.get(sort)){
+                trackingAnagrams.set(sort,[arrayOfanagrams[i]]);
+            }
+            else{
+                trackingAnagrams.get(sort).push(arrayOfanagrams[i]);
+            }
+        }
+
+        console.log(trackingAnagrams);
+        
+}
+// anagramGrouping(["cat","act", "dog", "god" ,"tac"]);
+
+//Starting new Question from 70+  question challenges.
+
+
