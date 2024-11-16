@@ -95,3 +95,32 @@ function anagramGrouping(arrayOfanagrams){
 //Starting new Question from 70+  question challenges.
 
 
+function generatePowerSet(nums) {
+    const result = []; // To store all subsets
+
+    function backtrack(start, currentSubset) {
+        // Add the current subset to the result
+        result.push([...currentSubset]);
+
+        // Explore further subsets by including elements
+        for (let i = start; i < nums.length; i++) {
+            // Include nums[i] in the current subset
+            currentSubset.push(nums[i]);
+
+            // Recurse to include more elements
+            backtrack(i + 1, currentSubset);
+
+            // Backtrack: Remove the last element to try the next possibility
+            currentSubset.pop();
+        }
+    }
+
+    // Start the backtracking process
+    backtrack(0, []);
+    return result;
+}
+
+// Example usage
+// const set = [1, 2, 3];
+// const powerSet = generatePowerSet(set);
+// console.log("Power Set:", powerSet);
