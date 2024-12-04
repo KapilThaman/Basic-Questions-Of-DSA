@@ -124,3 +124,28 @@ function generatePowerSet(nums) {
 // const set = [1, 2, 3];
 // const powerSet = generatePowerSet(set);
 // console.log("Power Set:", powerSet);
+
+
+//Plalindrome....
+
+function palindrome(number){
+    let arrayOfNumber = number.split("");
+    let i = 0;
+    let j = arrayOfNumber.length - 1;
+
+    while(i < j){
+        if(arrayOfNumber[i] == arrayOfNumber[j]){
+            i++;
+            j--;
+        }
+       else{
+        return false;
+       }
+    }
+   return true;
+}
+
+// console.log(palindrome("10"));
+
+//Fibonacci Series.... 0,1,1,2,3,5,8,13
+
