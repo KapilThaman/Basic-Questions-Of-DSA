@@ -149,3 +149,42 @@ function palindrome(number){
 
 //Fibonacci Series.... 0,1,1,2,3,5,8,13
 
+// Check if all the character in string are unique
+
+// function isUniqueChars(str) {
+//     let checker = 0; // This variable will act as a bit vector
+    
+//     for (let i = 0; i < str.length; i++) { debugger
+//         const val = str.charCodeAt(i) - 'a'.charCodeAt(0); // Convert character to 0-25 range
+//         console.log(val);
+//         // Check if the bit at position `val` is already set
+//         console.log()
+//         if ((checker & (1 << val)) > 0) {debugger
+//             return false; // Duplicate character found
+//         }
+//         console.log(checker);
+        
+//         // Mark this character as seen by setting the bit at position `val`
+//         checker |= (1 << val);debugger
+//         console.log(checker);
+//     }
+    
+//     return true; // All characters are unique
+// }
+// console.log(isUniqueChars("kall"));
+
+function CheckUnique (Str){
+    let checker  = 0;
+
+    for(let i = 0; i < Str.length; i++){
+        let positionOfChar = Str.charCodeAt(i) - 'a'.charCodeAt(0);
+        if((checker & (1 << positionOfChar) ) > 0){
+            return false;
+        }
+
+        checker |= (1 << positionOfChar);
+    }
+    return true;
+}
+
+console.log(CheckUnique("Kalk"));
