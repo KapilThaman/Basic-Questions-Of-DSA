@@ -173,18 +173,24 @@ function palindrome(number){
 // }
 // console.log(isUniqueChars("kall"));
 
-function CheckUnique (Str){
-    let checker  = 0;
 
-    for(let i = 0; i < Str.length; i++){
-        let positionOfChar = Str.charCodeAt(i) - 'a'.charCodeAt(0);
-        if((checker & (1 << positionOfChar) ) > 0){
+
+function uniqueString(str){
+
+    let checker = 0;
+
+    for(let i =0 ; i < str.length; i++){
+        let positionOfChar = str.charCodeAt(i) - 'a'.charCodeAt(0);
+        if(((1 << positionOfChar) & checker) > 0){ 
+            // 1 << positionOfChar will give you suppose for K : 1000000000 with & it will be like 00000000000 so it will be 0.
+
             return false;
         }
-
+        // here |= will keep track of the values seen : 1000000000 | 0000000000 = 1000000000
         checker |= (1 << positionOfChar);
     }
     return true;
 }
 
-console.log(CheckUnique("Kalk"));
+console.log(uniqueString("Kalk"));
+
